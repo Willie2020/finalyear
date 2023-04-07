@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>AfterClass | Request</title>
+    <link rel="shortcut icon" href="/Images/a.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/stylereq.css">
+    <link rel="stylesheet" href="/css/navreq.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="https://kit.fontawesome.com/b390487c26.js" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   </head>
+
+   <body style = "position:left;">
+      <!----Menu Bar-->
+  <div id="menu-bar" class="fas fa-bars"></div>
+  <!----Menu Bar-->
+  <!---Navbar Section Starts-->
+      <nav class="nav">
+       <ul>
+              <li><a href="/home.html"class="logo">
+                  <img src="/Images/a.png" alt="logo">
+                  <span class="nav-item">AfterClass</span>
+              </a></li>
+
+              <li><a href="/home.html">
+                <i class="fas fa-home"></i>
+                  <span class="nav-item">Home</span>
+              </a></li>
+
+              <li><a href="request.html">
+                  <i class="fas fa-exchange-alt"></i>
+                  <span class="nav-item">Request Tutor</span>
+              </a></li>
+
+              <li><a href="become.html">
+                  <i class="fas fa-user-plus"></i>
+                  <span class="nav-item">Become Tutor</span>
+              </a></li>
+
+                <li><a href="notification.html">
+                  <i class="fas fa-envelope"></i>
+                  <span class="nav-item">Notification</span>
+              </a></li>
+
+              <li><a href="FAQ.html">
+                  <i class="fas fa-question"></i>
+                  <span class="nav-item">FAQ</span>
+              </a></li>
+
+
+              <li><a href="login.html" class="logout">
+                  <i class="fas fa-sign-out-alt"></i>
+                  <span class="nav-item">Logout</span>
+              </a></li>
+       </ul>
+      </nav>
+  </div>
+  <!---Navbar Section End-->
+
+
+   <!-- form starts here -->
+  <div class="container" >
+    <div class="title">Request a Tutor</div>
+    <div class="content" >
+      <form action="#" >
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Programme</span>
+            <select id="programme" name="programme" class="hov" onchange="populateCourses()">
+              <option value="">Please select a programme</option>
+              <option value="it">Information Technology</option>
+              <option value="ba">Business Administration</option>
+              <option value="acc">Accounting</option>
+            </select>
+          </div>
+          <div class="input-box">
+            <span class="details">Course</span>
+            <select id="course" name="course" class="hov">
+              <option value="">Please select a course</option>
+            </select>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Course Code</span>
+            <input type="text" id="course-code" name="course-code" readonly>
+          </div>
+       
+          <div class="input-box">
+            <span class="details">Prefered time</span>
+            <input type="time" placeholder="Enter Prefered meeting time" name="time" required>
+          </div>
+        </div>
+
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+        
+          <span class="gender-title">Prefered tutor gender</span>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Male</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Female</span>
+          </label>
+          </div>
+        </div>
+        <textarea placeholder="Any note for Tutor?"></textarea>
+        <div class="button">
+          <input type="submit" value="Request">
+        </div>
+      </form>
+    </div>
+  </div>
+<!-- form ends here -->
+
+  <script>
+    const menu = document.querySelector("#menu-bar");
+    const navbar = document.querySelector(".nav");
+
+    menu.addEventListener('click', () =>{
+        menu.classList.toggle('fa-times');
+    navbar.classList.toggle('active');
+    });
+    </script>
+
+
+
+<script>
+  function populateCourses() {
+    const programmeSelect = document.getElementById("programme");
+    const courseSelect = document.getElementById("course");
+    
+    // Clear the course options
+    courseSelect.innerHTML = '<option value="">Please select a course</option>';
+    
+    // Add the appropriate course options based on the selected programme
+    switch (programmeSelect.value) {
+      case "it":
+        courseSelect.innerHTML += '<option value="BITM203">Web Development</option>';
+        courseSelect.innerHTML += '<option value="BITM102">Computer Hardware</option>';
+        courseSelect.innerHTML += '<option value="BITM104">Intro. Programming</option>';
+        break;
+      case "ba":
+        courseSelect.innerHTML += '<option value="BCPC212">Business Ethics</option>';
+        courseSelect.innerHTML += '<option value="BCPC205">Quantitative Methods</option>';
+        courseSelect.innerHTML += '<option value="BCPC205">Elements of Marketing</option>';
+        break;
+      case "acc":
+        courseSelect.innerHTML += '<option value="BCPC112">Business Statistics</option>';
+        courseSelect.innerHTML += '<option value="BCPC206">Total Quality Mgt</option>';
+        courseSelect.innerHTML += '<option value="BCPC118">Intro to Economics</option>';
+        break;
+      default:
+        // No programme selected, so do nothing
+        break;
+    }
+  }
+  
+  // Add an event listener to the course select element to update the course code input
+  const courseSelect = document.getElementById("course");
+  const courseCodeInput = document.getElementById("course-code");
+  courseSelect.addEventListener("change", function() {
+    courseCodeInput.value = courseSelect.value.toUpperCase();
+  });
+  </script>
+</body>
+</html>

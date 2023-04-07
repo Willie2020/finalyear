@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+
+.contain{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(21, 21, 41, 0.454), rgba(0, 0, 50, 0.438)), url(/Images/close-up-hand-writing-notebook-top-view.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+/*change*/
+.form-box{
+    width:100%;
+    max-width: 450px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    background:#fff;
+    padding: 10px 50px 220px;
+    text-align: center;
+    border-radius:30px ;
+    padding-top: 30px;
+}
+
+.form-box h3{
+    font-size: 20px;
+    margin-bottom: 1%;
+    color: #000000;
+    Position: relative;
+    font-weight: 500;
+
+}
+
+/*change*/
+ .form-box h3::after{
+    content: '';
+    width:30px;
+    height:4px;
+    border-radius: 3px;
+    background: #e6a507;
+    position: absolute;
+    bottom: 4%;
+    left: 12%;
+    transform: translate(-50%);
+} 
+
+.input-field{
+    background: #069df533 ;
+    margin: 15px 0;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+input{
+    width: 100%;
+    background-color: transparent;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 15px 12px;
+}
+
+.input-field i{
+    margin-left: 15px;
+    color: #e6a707;
+}
+
+a:hover{
+    color: #000000;
+}
+
+a{
+    text-decoration: none;
+    color: #999;
+    font-size: 15px;
+}
+
+/*change*/
+.btn-field{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    margin-top:0px;
+    margin-bottom: 10px;
+    padding-top: 0px;
+}
+
+.btn-field button{
+    flex-basis:48%;
+    background: #069df5;
+    color:#fff;
+    height: 40px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    cursor:pointer;
+    transition:0.5s;
+}
+
+.input-group{
+    height:280px ;
+}
+
+/*change*/
+.logo img{
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: start;
+    /* margin-right: 200px; */
+}
+
+.btn-field button:hover{
+background: #e6a507;
+}
+
+/*Change*/
+@media screen and (max-width:400px) {
+    .form-box{
+        width:100%;
+        
+    }
+
+    h3{
+        font-size: 1rem;
+        text-align:center;
+        margin-top: 4%;
+    }
+    
+    .input-group{
+        margin-top: 10%;
+    }
+
+    .form-box h3::after{
+        bottom: 82%;
+    }
+}

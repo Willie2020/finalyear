@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="shortcut icon" href="/Images/a.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/noti_style.css" />
+    <title>AfterClass | Notifications</title>
+    <link rel="stylesheet" href="/css/navreq.css">
+    <script src="https://kit.fontawesome.com/b390487c26.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  </head>
+  </head>
+  <body>
+
+ <!---Navbar Section Starts-->
+ <div id="menu-bar" class="fas fa-bars"></div>
+ <div class="contains">  
+  <nav class="nav">
+   <ul>
+          <li><a href="/home.html"class="logo">
+              <img src="/Images/a.png" alt="logo">
+              <span class="nav-item">AfterClass</span>
+          </a></li>
+
+          <li><a href="/home.html">
+              <i class="fas fa-home"></i>
+              <span class="nav-item">Home</span>
+          </a></li>
+
+          <li><a href="request.html">
+              <i class="fas fa-exchange-alt"></i>
+              <span class="nav-item">Request Tutor</span>
+          </a></li>
+
+          <li><a href="become.html">
+              <i class="fas fa-user-plus"></i>
+              <span class="nav-item">Become Tutor</span>
+          </a></li>
+
+            <li><a href="notification.html">
+              <i class="fas fa-envelope"></i>
+              <span class="nav-item">Notification</span>
+          </a></li>
+
+          <li><a href="FAQ.html">
+              <i class="fas fa-question"></i>
+              <span class="nav-item">FAQ</span>
+          </a></li>
+
+
+          <li><a href="login.html" class="logout">
+              <i class="fas fa-sign-out-alt"></i>
+              <span class="nav-item">Logout</span>
+          </a></li>
+   </ul>
+  </nav>
+</div>
+<!---Navbar Section End-->
+
+
+    <div class="container">
+      <header>
+        <div class="notif_box">
+          <h2 class="title">Notifications</h2>
+          <span id="notifes"></span>
+        </div>
+        <p id="mark_all">Mark all as read</p>
+      </header>
+      <main>
+        <div class="notif_card unread">
+          <img src="/Images/Pp copy.png" alt="avatar" />
+          <div class="description">
+            <p class="user_activity">
+              <strong>Hello Jessica,</strong> your tutor for Introduction to IT will be <strong>Theophilus.</strong>
+              <b>Contact him via whatsapp</b>
+              <p><strong>Name:</strong> Theophilus Anim</p>
+            </p>
+            <p><strong>Contact:</strong> 233244567123</p>
+            </p><p><strong>Programme:</strong> BSc Information Technology Management</p>
+          </p>
+          <p><strong>Level:</strong> 200</p>
+            </p>
+            <p class="time">11:57AM</p>
+          </div>
+        </div>
+        <div class="notif_card unread">
+          <img src="/Images/Jawad  copy.png" alt="avatar" />
+          <div class="description">
+            <p class="user_activity">
+              <strong>NEWS!!!</strong> A new tutor for your programme has been added.<strong>Check them out</strong>
+            </p>
+            <p class="time">5m ago</p>
+          </div>
+        </div>
+        <div class="notif_card unread">
+          <img src="/Images/ole.png" alt="avatar" />
+          <div class="description">
+            <p class="user_activity">
+              Rate Me,<strong> Edwin Annor,</strong>
+            </p>
+            <p class="time">2 day ago</p>
+          </div>
+        </div>
+        <div>
+          <div class="notif_card">
+          <div class="message_card">
+            <img
+            src="/Images/boyo.png"
+            alt="avatar"
+          />
+          <div class="description">
+            <p class="user_activity">
+              <strong>Emmanuel Agyekum </strong> received payment for tutoring you
+            </p>
+            <p class="time">2/09/2023</p>
+          </div>
+          </div>
+        </div>
+        <div class="message">
+              <p>
+                Hello, thanks for the rating as well. I hope you enjoyed and benefitted from the session. Cheers!
+              </p>
+            </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="/JS/app.js"></script>
+    <script>
+      const menu = document.querySelector("#menu-bar");
+      const navbar = document.querySelector(".nav");
+  
+      menu.addEventListener('click', () =>{
+          menu.classList.toggle('fa-times');
+      navbar.classList.toggle('active');
+      });
+      </script>
+  </body>
+</html>

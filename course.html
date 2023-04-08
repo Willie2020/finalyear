@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Selection | AfterClass</title>
+    <link rel="shortcut icon" href="/Images/a.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/stylein.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://kit.fontawesome.com/b390487c26.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="contain">
+        <div class="form-box">
+            <div class="logo">
+                <img src="./Images/logotype_hori.png">
+            </div>
+
+            <h3>Select your course</h3>
+
+            <div class="input-group">
+                <div class="input-field">
+                    <i class="fa-solid fa-book"></i>
+                    <label for="programme">Programme:</label>
+                    <select id="programme" name="programme" onchange="updateCourses()">
+                        <option value="">Select Programme</option>
+                        <option value="cs">Computer Science</option>
+                        <option value="eng">English</option>
+                    </select>
+                </div>
+
+                <div class="input-field">
+                    <i class="fa-solid fa-book"></i>
+                    <label for="course">Course:</label>
+                    <select id="course" name="course" onchange="updateCourseCode()">
+                        <option value="">Select Course</option>
+                    </select>
+                </div>
+
+                <div class="input-field">
+                    <i class="fa-solid fa-code"></i>
+                    <label for="coursecode">Course Code:</label>
+                    <input type="text" id="coursecode" name="coursecode" readonly>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

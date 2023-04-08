@@ -1,3 +1,23 @@
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #f44336;
+    color: #5d74c8;
+    padding: 12px 24px;
+    border-radius: 4px;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s;
+  }
+  
+  .toast.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+
 *{
     margin: 0;
     padding: 0;
@@ -28,28 +48,8 @@
     border-radius:30px ;
 }
 
-.form-box h3{
-    font-size: 20px;
-    margin-bottom: 1%;
-    color: #000000;
-    Position: relative;
-    font-weight: 500;
 
-}
 
-/*change*/
-
-.form-box h3::after{
-    content: '';
-    width:23px;
-    height:4px;
-    border-radius: 3px;
-    background: #e6a507;
-    position: absolute;
-    bottom: 10%;
-    left: 18%;
-    transform: translate(-50%);
-} 
 
 .input-field{
     background: #069df533 ;
@@ -93,7 +93,7 @@ a{
     justify-content: center;
 }
 
-.btn-field button{
+.btn-field input{
     flex-basis:48%;
     background: #069df5;
     color:#fff;
@@ -103,6 +103,7 @@ a{
     outline: 0;
     cursor:pointer;
     transition:.5s;
+    padding-top: 14px;
 }
 
 .input-group{
@@ -110,16 +111,18 @@ a{
 }
 
 /*change*/
-.logo img{
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo img {
     width: 150px;
     height: 50px;
-    display: flex;
-    justify-content: start;
-    /* margin-right: 200px; */
-
 }
 
-.btn-field button:hover{
+.btn-field input:hover{
     background: #e6a507;
     }
     
@@ -151,6 +154,11 @@ a{
     .input-group{
         margin-top: 5%;
     }
+
+    h3 {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }      
 
 
     @media screen and (max-width:400px){

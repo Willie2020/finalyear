@@ -49,7 +49,7 @@ section {
 /* Top Section */
 header {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.468), rgba(0, 0, 0, 0.6)), url('/Images/businesswoman-having-online-meeting.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.468), rgba(0, 0, 0, 0.6)), url('./Images/businesswoman-having-online-meeting.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

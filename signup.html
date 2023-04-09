@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,60 +8,78 @@
     <title>AfterClass | Signup</title>
     <link rel="shortcut icon" href="/Images/a.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/styleup.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <script src="https://kit.fontawesome.com/b390487c26.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <div class="contain">
-<div class="form-box">
-    <div class="logo">
-        <img src="./Images/logotype_hori.png" alt="">
+        <div class="form-box">
+            <div class="logo">
+                <img src="./Images/logotype_hori.png" alt="">
+            </div>
+            <h3>Create an AfterClass account</h3>
+            <!-- form starts here -->
+            <form action="php/register.php" method="post">
+                <div class="input-group">
+                    <div class="input-field">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" placeholder="First Name" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" placeholder="Last Name" id="lastName" name="lastName" required>
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" placeholder="Index Number" id="indexNumber" name="indexNumber" required>
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-phone"></i>
+                        <input type="tel" placeholder="Phone Number" id="phoneNumber" name="phoneNumber" required>
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="Password" id="password" name="password" required>
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="Confirm Password" name="confirmPassword" required>
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <select name="program_id" id="program_id" required>
+                        </select>
+                    </div>
+                   
+                    <div class="btn-field">
+                        <input type="submit" value="Sign Up" name="submit">
+                    </div>
+                    <div>
+                        <a href="./login.html">Already have an account?</a>
+                    </div>
+                </div>
+            </form>
         </div>
-    <h3>Create an AfterClass account</h3>
+    </div>
+    <script>
+        // Fetch the program options from the server and insert them into the select element
+        function loadProgramOptions() {
+            const programSelect = document.getElementById('program_id');
 
-    <!-- form starts here -->
-    <form action="php/register.php" method="post">
-        <div class="input-group">
-            <div class="input-field">
-                <i class="fa-solid fa-user"></i>
-                <input type="text" placeholder="First Name" id="firstName" name="firstName" required>
-            </div>
+            fetch('php/program_options.php')
+                .then(response => response.text())
+                .then(html => {
+                    programSelect.innerHTML = html;
+                })
+                .catch(error => {
+                    console.error('Error fetching program options:', error);
+                });
+        }
 
-            <div class="input-field">
-                <i class="fa-solid fa-user"></i>
-                <input type="text" placeholder="Last Name" id="lastName" name="lastName" required>
-            </div>
-
-            <div class="input-field">
-                <i class="fa-solid fa-user"></i>
-                <input type="text" placeholder="Index Number" id="indexNumber" name="indexNumber" required>
-            </div>
-
-            <div class="input-field">
-                <i class="fa-solid fa-phone"></i>
-                <input type="tel" placeholder="Phone Number" id="phoneNumber" name="phoneNumber" required>
-            </div>
-
-            <div class="input-field">
-                <i class="fa-solid fa-lock"></i>
-                <input type="password" placeholder="Password" id="password" name="password" required>
-            </div>
-
-            <div class="input-field">
-                <i class="fa-solid fa-lock"></i>
-                <input type="password" placeholder="Confirm Password" name="confirmPassword" required>
-            </div>
-
-            <div class="btn-field">
-                <input type="submit" value="Sign Up" name="submit">
-            </div>
-            <div>
-                <a href="./login.html">Already have an account?</a>
-            </div>
-        </div>
-    </form>
-</div>
-</div>
+        // Call the function to load program options when the page loads
+        loadProgramOptions();
+    </script>
 </body>
+
 </html>

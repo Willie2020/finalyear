@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfterClass | Admin</title>
+    <link rel="shortcut icon" href="/Images/a.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://kit.fontawesome.com/b390487c26.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./css/admin_style.css">
+</head>
+
+<body>
+    <div class="admin-container">
+        <h1>Admin Dashboard</h1>
+
+        <!-- Buttons to trigger modals -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCourseModal">
+            Add Course
+        </button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProgrammeModal">
+            Add Programme
+        </button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteUserModal">
+            Delete User
+        </button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
+            Add User
+        </button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modifyUserModal">
+            Modify User
+        </button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modifyTutorModal">
+            Modify Tutor
+        </button>
+    </div>
+
+    <!-- Add your modals for each form here -->
+    <!-- Add Course Modal -->
+    <div class="modal fade" id="addCourseModal" tabindex="-1" aria-labelledby="addCourseModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addCourseModalLabel">Add Course</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="php/add_course.php" method="post">
+                    <div class="modal-body">
+                        <!-- Add your input fields for the add course form -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-primary" value="Add Course">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Programme Modal -->
+    
+
+    <!-- ... -->
+
+    <!-- Delete User Modal -->
+    <!-- ... -->
+
+    <!-- Add User Modal -->
+    <!-- ... -->
+
+    <!-- Modify User Modal -->
+    <!-- ... -->
+
+    <!-- Modify Tutor Modal -->
+    <!-- ... -->
+</body>
+
+</html>

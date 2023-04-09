@@ -15,6 +15,7 @@
 </head>
 
 <body style="position:left;">
+  <?php include 'php/programlist.php'; ?>
   <!----Menu Bar-->
   <div id="menu-bar" class="fas fa-bars"></div>
   <!----Menu Bar-->
@@ -72,7 +73,7 @@
             <span class="details">Programme</span>
             <select id="programme" name="programme" class="hov" onchange="populateCourses()">
                 <option value="">Please select a programme</option>
-                <?php include 'programlist.php'; ?>
+                <?php include '/php/programlist.php'; ?>
             </select>
         </div>
           <div class="input-box">
@@ -109,7 +110,7 @@
             </label>
           </div>
         </div>
-        <textarea placeholder="Any note for Tutor?"></textarea>
+        <textarea name="notes" placeholder="Any note for Tutor?"></textarea>
         <div class="button">
           <input type="submit" value="Request">
         </div>

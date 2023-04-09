@@ -1,9 +1,11 @@
 <?php
 session_start();
 require_once 'db_connect.php';
+$programs = $conn->query("SELECT * FROM programs");
+$courses = $conn->query("SELECT * FROM courses");
 
 if (isset($_POST['submit'])) {
-    $index_number = $_SESSION['user']['index_number'];
+    $user_id = $_SESSION['user']['id'];
     $programme = $_POST['programme'];
     $course = $_POST['course'];
     $course_code = $_POST['course-code'];
@@ -11,10 +13,12 @@ if (isset($_POST['submit'])) {
     $preferred_gender = $_POST['gender'];
     $notes = $_POST['notes'];
 
-    $sql = "INSERT INTO tutor_request (index_number, programme, course, course_code, preferred_time, preferred_gender, notes) 
+    $sql = "INSERT INTO tutor_request (user_id, programme, course, course_code, preferred_time, preferred_gender, notes) 
             VALUES (?, ?, ?, ?, ?, ?, ?)";
+
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param('sssssss', $index_number, $programme, $course, $course_code, $preferred_time, $preferred_gender, $notes);
+    $stmt->bind_param('issssss', $user_id, $programme, $course, $course_code, $preferred_time, $preferred_gender, $notes);
+
 
     if ($stmt->execute()) {
         // Redirect to the notification page
